@@ -32,5 +32,10 @@ export class NotepadController {
         form.reset()
     }
 
+    openNotepad(notePadID) {
+        console.log('📖 opening Notepad', notePadID)
+        notepadService.openNotepad(notePadID)
+    }
+
 }
 
