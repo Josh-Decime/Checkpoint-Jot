@@ -1,7 +1,25 @@
-<section class="container fluid">
+<section class="container-fluid">
     <section class="row">
-        <section class="col-4 bg-primary">
+
+        <section class="col-4 bg-primary sidebar-height">
+
             <h3 class="text-center">Notepad</h3>
+
+            <form onsubmit="app.NotepadController.createNotepad()">
+                <div class=" mb-2">
+                    <p class="fs-5 text-center">Create a new Notepad</p>
+                </div>
+                <div class="input-group">
+                    <div class="text-center form-control">
+                        <input type="text" name="noteName" id="note-name">
+                        <button type="submit" class="btn btn-secondary form-control" title="Create a new notepad"><i
+                                class="mdi mdi-file-plus"></i></button>
+                    </div>
+
+                </div>
+            </form>
+
+
             <div class="" id="notepad-list">
             </div>
         </section>
