@@ -16,6 +16,7 @@ function _drawNotepadList() {
 export class NotepadController {
     constructor() {
         console.log('📝 notepad controller is connected')
+        AppState.on('notePad', _drawNotepadList)
         _drawNotepadList()
     }
 

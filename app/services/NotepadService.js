@@ -7,6 +7,7 @@ class NotepadService {
     createNotepad(formData) {
         const newNotepad = new Notepad(formData)
         console.log('✨📒', newNotepad)
+        AppState.notePad.push(newNotepad)
     }
 
     openNotepad(notepadId) {
