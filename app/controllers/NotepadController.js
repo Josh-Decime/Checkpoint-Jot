@@ -11,11 +11,19 @@ function _drawNotepadList() {
     document.getElementById('notepad-list').innerHTML = content
 }
 
+function _drawActiveNotepad() {
+    console.log('✒️ drawing active')
+    const activeNotepad = AppState.activeNotepad
+    let content = activeNotepad.activeNotepadTemplate
+    document.getElementById('active-notepad').innerHTML = content
+}
+
 
 
 export class NotepadController {
     constructor() {
         console.log('📝 notepad controller is connected')
+        AppState.on('activeNotepad', _drawActiveNotepad)
         AppState.on('notePad', _drawNotepadList)
         _drawNotepadList()
     }

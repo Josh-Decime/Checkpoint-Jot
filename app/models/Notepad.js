@@ -28,4 +28,14 @@ export class Notepad {
         `
     }
 
+    get activeNotepadTemplate() {
+        return `
+        <div>
+    <h1 class="fw-bold">${this.noteName}</h1>
+    <p>${this.editedTime}</p>
+    <textarea name="activeNotepad" id="active-notepad-body" cols="30" rows="10" maxlength="50000">${this.noteBody}</textarea>
+</div> 
+        `
+    }
+
 }

@@ -13,6 +13,8 @@ class NotepadService {
     openNotepad(notepadId) {
         const notePad = AppState.notePad.find(notePad => notePad.id == notepadId)
         console.log('🫴', notePad)
+        AppState.activeNotepad = notePad
+        console.log(AppState.activeNotepad)
     }
 
 
