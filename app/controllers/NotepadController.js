@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js";
+import { Notepad } from "../models/Notepad.js";
 import { notepadService } from "../services/NotepadService.js";
 import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
@@ -26,7 +27,8 @@ export class NotepadController {
         console.log('📝 notepad controller is connected')
         AppState.on('activeNotepad', _drawActiveNotepad)
         AppState.on('notePad', _drawNotepadList)
-        _drawNotepadList()
+        // _drawNotepadList() //replaced by loaded in data
+        notepadService.loadNotepad()
     }
 
     createNotepad() {

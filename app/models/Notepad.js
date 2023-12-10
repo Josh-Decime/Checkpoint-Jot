@@ -10,6 +10,7 @@ export class Notepad {
     constructor(data) {
         this.id = generateId()
         this.noteName = data.noteName
+        this.noteColor = data.noteColor
         this.noteBody = data.noteBody || ''
         this.editedTime = data.editedTime
         this.createdTime = new Date(data.createdTime)
@@ -18,12 +19,12 @@ export class Notepad {
 
     get notepadListItem() {
         return `
-   <div class="d-flex justify-content-around m-3 bg-secondary">
+   <div class="d-flex justify-content-center m-3 bg-secondary">
     <span>${this.noteName}</span>
     <span>${this.editedTime}</span>
     <span>
-        <button onclick="app.NotepadController.openNotepad('${this.id}')" class="btn btn-outline-primary"
-            title="open Notepad"><i class="mdi mdi-notebook-edit"></i></button>
+        <button onclick="app.NotepadController.openNotepad('${this.id}')" style="color: ${this.noteColor}" class="btn"
+        title="open Notepad"><i class="mdi mdi-notebook-edit"></i></button>
     </span>
 </div>
         `

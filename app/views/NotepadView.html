@@ -11,7 +11,9 @@
                 </div>
                 <div class="input-group">
                     <div class="text-center form-control">
-                        <input type="text" name="noteName" id="note-name" minlength="3" maxlength="15">
+                        <input type="text" name="noteName" id="note-name" minlength="3" maxlength="15"
+                            class="form-control">
+                        <input type="color" name="noteColor" class="form-control">
                         <button type="submit" class="btn btn-secondary form-control" title="Create a new notepad"><i
                                 class="mdi mdi-file-plus"></i></button>
                     </div>
@@ -19,7 +21,9 @@
                 </div>
             </form>
 
-
+            <!-- <div>
+    <p></p>
+</div> -->
             <div class="" id="notepad-list">
             </div>
         </section>
@@ -33,13 +37,15 @@
 
 <!-- SECTION HTML for list items -->
 <!-- <div class="d-flex justify-content-center m-3 bg-secondary">
-    <span>${this.noteName}</span>
+    <span>${this.noteName} <i style="color: ${this.noteColor};" class="mdi mdi-note-text-outline"></i></span>
     <span>${this.editedTime}</span>
     <span>
-        <button onclick="app.NotepadController.openNotepad('${this.id}')" class="btn btn-outline-secondary"
-        title="open Notepad"><i class="mdi mdi-notebook-edit"></i></button>
+        <button onclick="app.NotepadController.openNotepad('${this.id}')" class="btn btn-outline-primary"
+            title="open Notepad"><i class="mdi mdi-notebook-edit"></i></button>
     </span>
 </div> -->
+
+<!-- <i style="color: ${this.noteColor}" class="mdi mdi-note-text-outline"></i> -->
 
 
 <!-- SECTION HTML for active Notepad -->

@@ -42,6 +42,11 @@ class NotepadService {
 
     }
 
+    loadNotepad() {
+        const storedNotepad = loadState('notePad', [Notepad])
+        AppState.notePad = storedNotepad
+    }
+
 
 
 
