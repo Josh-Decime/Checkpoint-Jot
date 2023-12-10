@@ -8,6 +8,7 @@ class NotepadService {
         const newNotepad = new Notepad(formData)
         console.log('✨📒', newNotepad)
         AppState.notePad.push(newNotepad)
+        this.saveNotepad()
     }
 
     openNotepad(notepadId) {
@@ -17,8 +18,15 @@ class NotepadService {
         console.log(AppState.activeNotepad)
     }
 
-    saveNotepad() {
-        saveState('')
+    saveNotepad(newBody) {
+
+        console.log('new body coming into service: 📝🫲', newBody)
+        const activeNotepad = AppState.activeNotepad
+        activeNotepad.noteBody = newBody
+        AppState.emit('activeNotepad')
+        saveState('notePad', AppState.notePad)
+        console.log('service notepad:', newBody)
+        console.log('Active notepad:', activeNotepad)
     }
 
 

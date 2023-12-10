@@ -26,6 +26,7 @@ class ObservableAppState extends EventEmitter {
     })
   ]
 
+  /**@type {Notepad} */
   activeNotepad = null
 
 

@@ -46,5 +46,12 @@ export class NotepadController {
         notepadService.openNotepad(notePadID)
     }
 
+    saveNotepad() {
+        console.log('💾 saving')
+        const newBody = document.getElementById('active-notepad-body').value
+        console.log('new notes: ✨📝', newBody)
+        notepadService.saveNotepad(newBody)
+    }
+
 }
 
