@@ -29,6 +29,14 @@ class NotepadService {
         console.log('Active notepad:', activeNotepad)
     }
 
+    removeNote(noteId) {
+        const indexToRemove = AppState.notePad.findIndex(notePad => notePad.id == noteId)
+        if (indexToRemove > -1) {
+            AppState.notePad.splice(indexToRemove, 1)
+            this.saveNotepad()
+        }
+    }
+
 
 
 

@@ -33,9 +33,11 @@ export class Notepad {
         <div>
     <h1 class="fw-bold">${this.noteName}</h1>
     <p>${this.editedTime}</p>
-    <div>
-        <button onclick="app.NotepadController.saveNotepad()" class="btn btn-success"><i
-                class="mdi mdi-content-save">Save!</i></button>
+    <div class="d-flex justify-content-around">
+        <button onclick="app.NotepadController.saveNotepad()" class="btn btn-success"
+            title="Yeah, good idea to save that!"><i class="mdi mdi-content-save">Save!</i></button>
+        <button onclick="app.NotepadController.removeNotepad('${this.id}')" class="btn btn-danger"
+            title="Delete your note forever & ever.."><i class="mdi mdi-skull-scan"></i></button>
     </div>
     <textarea name="activeNotepad" id="active-notepad-body" cols="30" rows="10"
         maxlength="50000">${this.noteBody}</textarea>

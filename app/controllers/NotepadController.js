@@ -1,6 +1,7 @@
 import { AppState } from "../AppState.js";
 import { notepadService } from "../services/NotepadService.js";
 import { getFormData } from "../utils/FormHandler.js";
+import { Pop } from "../utils/Pop.js";
 
 
 function _drawNotepadList() {
@@ -51,6 +52,14 @@ export class NotepadController {
         const newBody = document.getElementById('active-notepad-body').value
         console.log('new notes: ✨📝', newBody)
         notepadService.saveNotepad(newBody)
+    }
+
+    async removeNotepad(noteId) {
+        let isConfirmed = await Pop.confirm("Are you sure you want to delete this?", 'Those notes might be important', 'Yes, delete it', 'error')
+        if (isConfirmed) {
+            console.log('🔥Deleting note', noteId)
+            notepadService.removeNote(noteId)
+        }
     }
 
 }
