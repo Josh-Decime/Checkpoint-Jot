@@ -20,6 +20,13 @@ function _drawActiveNotepad() {
     document.getElementById('active-notepad').innerHTML = content
 }
 
+// NOTE note count
+// function _drawNoteCount(){
+//     console.log('Counting Notes: ➕')
+//     const noteCount = AppState.noteCount
+//     let content = Notepad.currentNoteCount()
+// }
+
 
 
 export class NotepadController {

@@ -28,6 +28,8 @@ class ObservableAppState extends EventEmitter {
     })
   ]
 
+  noteCount = this.notePad.length
+
   /**@type {Notepad} */
   activeNotepad = null
 

@@ -34,6 +34,7 @@ class NotepadService {
         if (indexToRemove > -1) {
             AppState.notePad.splice(indexToRemove, 1)
             this.saveNotepad()
+
         }
     }
 

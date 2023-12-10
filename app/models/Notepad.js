@@ -15,13 +15,16 @@ export class Notepad {
         this.editedTime = data.editedTime
         this.createdTime = new Date(data.createdTime)
         console.log('new notepad 📓', this)
+
+        // NOTE building note count
+        // this.noteCount = AppState.noteCount
     }
 
     get notepadListItem() {
         return `
-   <div class="d-flex justify-content-center m-3 bg-secondary">
+   <div class="d-flex justify-content-between my-2 px-2 bg-secondary">
     <span>${this.noteName}</span>
-    <span>${this.editedTime}</span>
+    <span>${this.ShortDate}</span>
     <span>
         <button onclick="app.NotepadController.openNotepad('${this.id}')" style="color: ${this.noteColor}" class="btn"
         title="open Notepad"><i class="mdi mdi-notebook-edit"></i></button>
@@ -47,8 +50,19 @@ export class Notepad {
         `
     }
 
+    // NOTE building note count
+    // get currentNoteCount() {
+    //     return `
+    //     <p>${this.noteCount}</p>
+    //     `
+    // }
+
     get ShortDate() {
         return this.createdTime.toLocaleDateString()
+    }
+
+    get noteCounted() {
+        return
     }
 
 }
