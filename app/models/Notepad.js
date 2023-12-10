@@ -6,12 +6,13 @@ import { generateId } from "../utils/GenerateId.js";
 
 
 export class Notepad {
-    /** */
+    // /** @param {}*/
     constructor(data) {
         this.id = generateId()
         this.noteName = data.noteName
         this.noteBody = data.noteBody || ''
         this.editedTime = data.editedTime
+        this.createdTime = new Date(data.createdTime)
         console.log('new notepad 📓', this)
     }
 
@@ -32,9 +33,9 @@ export class Notepad {
         return `
         <div>
     <h1 class="fw-bold">${this.noteName}</h1>
-    <p>${this.editedTime}</p>
+    <p>${this.ShortDate}</p>
     <div class="d-flex justify-content-around">
-        <button onclick="app.NotepadController.saveNotepad()" class="btn btn-success"
+        <button onclick="app.NotepadController.saveActiveNotepad()" class="btn btn-success"
             title="Yeah, good idea to save that!"><i class="mdi mdi-content-save">Save!</i></button>
         <button onclick="app.NotepadController.removeNotepad('${this.id}')" class="btn btn-danger"
             title="Delete your note forever & ever.."><i class="mdi mdi-skull-scan"></i></button>
@@ -43,6 +44,10 @@ export class Notepad {
         maxlength="50000">${this.noteBody}</textarea>
 </div>
         `
+    }
+
+    get ShortDate() {
+        return this.createdTime.toLocaleDateString()
     }
 
 }

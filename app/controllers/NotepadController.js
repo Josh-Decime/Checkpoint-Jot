@@ -36,6 +36,7 @@ export class NotepadController {
         const form = event.target
         const formData = getFormData(form)
         // formData.editedTime = formData.editedTime.replaceAll('-', '/')
+        // formData.createdTime = formData.createdTime.replaceAll('-', '/')
         console.log('➕📒', formData)
         notepadService.createNotepad(formData)
         // @ts-ignore
@@ -47,11 +48,11 @@ export class NotepadController {
         notepadService.openNotepad(notePadID)
     }
 
-    saveNotepad() {
+    saveActiveNotepad() {
         console.log('💾 saving')
         const newBody = document.getElementById('active-notepad-body').value
         console.log('new notes: ✨📝', newBody)
-        notepadService.saveNotepad(newBody)
+        notepadService.saveActiveNotepad(newBody)
     }
 
     async removeNotepad(noteId) {

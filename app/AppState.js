@@ -16,13 +16,15 @@ class ObservableAppState extends EventEmitter {
     new Notepad({
       noteName: 'Data is Connected',
       noteBody: 'The model is taking in new data from the AppState & is updating it in the console properly.',
-      editedTime: '12/8/2023',
+      editedTime: '12/7/2023',
+      createdTime: '12/3/2023'
     }),
 
     new Notepad({
       noteName: 'Lets see how this looks',
       noteBody: 'I need to display this out so I have a better understanding of what is going on',
       editedTime: '12/8/2023',
+      createdTime: '12/5/2023',
     })
   ]
 

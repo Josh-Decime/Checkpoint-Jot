@@ -18,15 +18,15 @@ class NotepadService {
         console.log(AppState.activeNotepad)
     }
 
-    saveNotepad(newBody) {
+    saveActiveNotepad(newBody) {
 
         console.log('new body coming into service: 📝🫲', newBody)
         const activeNotepad = AppState.activeNotepad
         activeNotepad.noteBody = newBody
         AppState.emit('activeNotepad')
-        saveState('notePad', AppState.notePad)
         console.log('service notepad:', newBody)
         console.log('Active notepad:', activeNotepad)
+        this.saveNotepad()
     }
 
     removeNote(noteId) {
@@ -37,6 +37,10 @@ class NotepadService {
         }
     }
 
+    saveNotepad() {
+        saveState('notePad', AppState.notePad)
+
+    }
 
 
 
