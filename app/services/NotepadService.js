@@ -17,6 +17,10 @@ class NotepadService {
         console.log(AppState.activeNotepad)
     }
 
+    saveNotepad() {
+        saveState('')
+    }
+
 
 
 
