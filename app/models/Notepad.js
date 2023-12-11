@@ -35,17 +35,21 @@ export class Notepad {
 
     get activeNotepadTemplate() {
         return `
-        <div>
-    <h1 class="fw-bold">${this.noteName}</h1>
-    <p>${this.ShortDate}</p>
-    <div class="d-flex justify-content-around">
-        <button onclick="app.NotepadController.saveActiveNotepad()" class="btn btn-success"
-            title="Yeah, good idea to save that!"><i class="mdi mdi-content-save">Save!</i></button>
-        <button onclick="app.NotepadController.removeNotepad('${this.id}')" class="btn btn-danger"
-            title="Delete your note forever & ever.."><i class="mdi mdi-skull-scan"></i></button>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <h1 class="fw-bold rounded text-center m-2 mt-3" style="background-color: ${this.noteColor};">${this.noteName}</h1>
+        <p>${this.ShortDate}</p>
+        <div class="col-12 col-md-9 d-flex justify-content-between mb-3">
+            <button onclick="app.NotepadController.saveActiveNotepad()" class="btn btn-success"
+                title="Yeah, good idea to save that!"><i class="mdi mdi-content-save">Save!</i></button>
+            <button onclick="app.NotepadController.removeNotepad('${this.id}')" class="btn btn-danger"
+                title="Delete your note forever & ever.."><i class="mdi mdi-skull-scan"></i></button>
+        </div>
+        <div class="col-12 col-md-9 d-flex justify-content-center">
+            <textarea name="activeNotepad" id="active-notepad-body" style="width: 100%;" cols="30" rows="25"
+                maxlength="50000">${this.noteBody}</textarea>
+        </div>
     </div>
-    <textarea name="activeNotepad" id="active-notepad-body" cols="30" rows="10"
-        maxlength="50000">${this.noteBody}</textarea>
 </div>
         `
     }

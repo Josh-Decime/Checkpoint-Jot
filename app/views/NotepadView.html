@@ -17,7 +17,7 @@
                     <div class="text-center form-control">
                         <input type="text" name="noteName" id="note-name" minlength="3" maxlength="15"
                             class="form-control">
-                        <input type="color" name="noteColor" class="form-control">
+                        <input type="color" name="noteColor" value="#8a8a88" class="form-control">
                         <button type="submit" class="btn btn-secondary form-control" title="Create a new notepad"><i
                                 class="mdi mdi-file-plus"></i></button>
                     </div>
@@ -53,15 +53,36 @@
 
 
 <!-- SECTION HTML for active Notepad -->
+<!-- <div class="container-fluid">
+    <div class="row justify-content-center">
+        <h1 class="fw-bold rounded text-center m-2 mt-3" style="background-color: ${this.noteColor};">${this.noteName}
+        </h1>
+        <p>${this.ShortDate}</p>
+        <div class="col-12 col-md-9 d-flex justify-content-between mb-3">
+            <button onclick="app.NotepadController.saveActiveNotepad()" class="btn btn-success"
+                title="Yeah, good idea to save that!"><i class="mdi mdi-content-save">Save!</i></button>
+            <button onclick="app.NotepadController.removeNotepad('${this.id}')" class="btn btn-danger"
+                title="Delete your note forever & ever.."><i class="mdi mdi-skull-scan"></i></button>
+        </div>
+        <div class="col-12 col-md-9 d-flex justify-content-center">
+            <textarea name="activeNotepad" id="active-notepad-body" style="width: 100%;" cols="30" rows="25"
+                maxlength="50000">${this.noteBody}</textarea>
+        </div>
+    </div>
+</div> -->
+
+<!-- SECTION Old active -->
 <!-- <div>
     <h1 class="fw-bold">${this.noteName}</h1>
-    <p>${this.editedTime}</p>
-    <div class="d-flex justify-content-around">
-        <button onclick="app.NotepadController.saveNotepad()" class="btn btn-success"
+    <p>${this.ShortDate}</p>
+    <div class="d-flex justify-content-around mb-3">
+        <button onclick="app.NotepadController.saveActiveNotepad()" class="btn btn-success"
             title="Yeah, good idea to save that!"><i class="mdi mdi-content-save">Save!</i></button>
         <button onclick="app.NotepadController.removeNotepad('${this.id}')" class="btn btn-danger"
             title="Delete your note forever & ever.."><i class="mdi mdi-skull-scan"></i></button>
     </div>
-    <textarea name="activeNotepad" id="active-notepad-body" cols="30" rows="10"
-        maxlength="50000">${this.noteBody}</textarea>
+    <div class="d-flex justify-content-center">
+        <textarea name="activeNotepad" id="active-notepad-body" cols="30" rows="10"
+            maxlength="50000">${this.noteBody}</textarea>
+    </div>
 </div> -->
