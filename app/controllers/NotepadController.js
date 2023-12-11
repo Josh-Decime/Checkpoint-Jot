@@ -49,7 +49,7 @@ export class NotepadController {
         // AppState.on('note-count', _drawLoopFunction)
         // _drawNotepadList() //replaced by loaded in data
         notepadService.loadNotepad()
-        // _drawLoopFunction()
+        _drawLoopFunction()
     }
 
     createNotepad() {

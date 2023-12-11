@@ -13,6 +13,7 @@ class NotepadService {
         console.log('✨📒', newNotepad)
         AppState.notePad.push(newNotepad)
         this.saveNotepad()
+
     }
 
     openNotepad(notepadId) {
@@ -33,6 +34,7 @@ class NotepadService {
         console.log('service notepad:', newBody)
         console.log('Active notepad:', activeNotepad)
         this.saveNotepad()
+        // AppState.emit('note-count')
     }
 
     removeNote(noteId) {
