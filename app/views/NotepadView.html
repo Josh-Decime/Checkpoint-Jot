@@ -12,6 +12,7 @@
             <form onsubmit="app.NotepadController.createNotepad()">
                 <div class=" mb-2">
                     <p class="fs-5 text-center">Create a new Notepad</p>
+                    <p>you have <span id="note-count"></span> notes</p>
                 </div>
                 <div class="input-group">
                     <div class="text-center form-control">
@@ -32,6 +33,7 @@
             </div>
         </section>
         <section class="col-8" id="active-notepad">
+            <div class="" id=""></div>
         </section>
     </section>
 </section>
@@ -91,3 +93,7 @@
             maxlength="50000">${this.noteBody}</textarea>
     </div>
 </div> -->
+
+<!-- note count -->
+<!-- <span>${this.noteCounted}</span> -->
+<!-- <span>${AppState.loopFunction()}</span> -->

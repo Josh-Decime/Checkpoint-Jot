@@ -7,7 +7,6 @@ class NotepadService {
     createNotepad(formData) {
         const newNotepad = new Notepad(formData)
         if (newNotepad.noteName != null) {
-
         } else {
             return window.alert('Must add a title to make a note')
         }

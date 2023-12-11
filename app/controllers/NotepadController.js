@@ -20,6 +20,16 @@ function _drawActiveNotepad() {
     document.getElementById('active-notepad').innerHTML = content
 }
 
+function _drawLoopFunction() {
+    const notepadCount = AppState.loopFunction()
+    document.getElementById('note-count').innerHTML = notepadCount.toString()
+}
+
+function _drawListAndLoop() {
+    _drawNotepadList()
+    _drawLoopFunction
+}
+
 // NOTE note count
 // function _drawNoteCount(){
 //     console.log('Counting Notes: ➕')
@@ -34,8 +44,12 @@ export class NotepadController {
         console.log('📝 notepad controller is connected')
         AppState.on('activeNotepad', _drawActiveNotepad)
         AppState.on('notePad', _drawNotepadList)
+        // AppState.on('notePad', _drawNotepadList, _drawLoopFunction)
+        // AppState.on('notePad', _drawListAndLoop)
+        // AppState.on('note-count', _drawLoopFunction)
         // _drawNotepadList() //replaced by loaded in data
         notepadService.loadNotepad()
+        // _drawLoopFunction()
     }
 
     createNotepad() {

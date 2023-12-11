@@ -30,6 +30,35 @@ class ObservableAppState extends EventEmitter {
 
   noteCount = this.notePad.length
 
+
+  //   let loopCount = 0
+
+  // for (let i = 0; i <= Notepad.length; i++) {
+  //   loopCount += 1
+  // }
+
+  // this.loopCount = 0;
+
+  //   noteCountLoop() {
+  //     for (let i = 0; i < Notepad.length; i++){
+  //       this.loopCount += 1
+  //     }
+  //   }
+  // why the heck cant i write a for loop inside here???
+
+  loopFunction() {
+    let loopAmount = 0
+
+    for (let i = 0; i < this.notePad.length; i++) {
+      loopAmount += 1
+      console.log('➰Loop Count', loopAmount)
+    }
+    return loopAmount
+    this.emit
+  }
+
+
+
   /**@type {Notepad} */
   activeNotepad = null
 
@@ -52,4 +81,20 @@ class ObservableAppState extends EventEmitter {
 
 }
 
+export class noteCounter {
+  constructor() {
+    this.loopCount = 0
+  }
+
+  noteCountLoop() {
+    console.log('Before loop:', this.loopCount)
+    for (let i = 0; i < Notepad.length; i++) {
+      this.loopCount += 1
+    }
+    console.log('After loop:', this.loopCount)
+  }
+}
+
+
 export const AppState = createObservableProxy(new ObservableAppState())
+

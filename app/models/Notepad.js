@@ -19,6 +19,7 @@ export class Notepad {
         console.log('new notepad 📓', this)
 
         // NOTE building note count
+        // this breaks all of javascript lol
         // this.noteCount = AppState.noteCount
     }
 
@@ -106,13 +107,21 @@ export class Notepad {
 
 
 
+    // returns 2 because thats what is in the array starting
+    // get noteCounted() {
+    //     return AppState.noteCount
+    // }
 
 
+    // get noteCountedLoop() {
+    //     return 
+    // }
+
+    // get countedNotes() {
+    //     return AppState.loopFunction
+    // }
 
 
 }
 
-// get noteCounted() {
-//     return
-// }
 
