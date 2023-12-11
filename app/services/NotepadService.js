@@ -6,6 +6,11 @@ import { loadState, saveState } from "../utils/Store.js";
 class NotepadService {
     createNotepad(formData) {
         const newNotepad = new Notepad(formData)
+        if (newNotepad.noteName != null) {
+
+        } else {
+            return window.alert('Must add a title to make a note')
+        }
         console.log('✨📒', newNotepad)
         AppState.notePad.push(newNotepad)
         this.saveNotepad()
@@ -23,6 +28,8 @@ class NotepadService {
         console.log('new body coming into service: 📝🫲', newBody)
         const activeNotepad = AppState.activeNotepad
         activeNotepad.noteBody = newBody
+        // NOTE changing editedTime on save.. Im amazed this worked first try! 
+        activeNotepad.editedTime = new Date()
         AppState.emit('activeNotepad')
         console.log('service notepad:', newBody)
         console.log('Active notepad:', activeNotepad)

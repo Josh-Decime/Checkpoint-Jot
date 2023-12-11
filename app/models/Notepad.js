@@ -9,10 +9,10 @@ export class Notepad {
     // /** @param {}*/
     constructor(data) {
         this.id = generateId()
-        this.noteName = data.noteName
+        this.noteName = data.noteName || null
         this.noteColor = data.noteColor
         this.noteBody = data.noteBody || ''
-        this.editedTime = data.editedTime
+        this.editedTime = data.editedTime && new Date(data.editedTime) || new Date()
         // this seems like it should work, but the data is coming in the wrong format, which breaks all my javascript when it hits the first shortDate
         // this.createdTime = data.createdTime || new Date()
         this.createdTime = data.createdTime && new Date(data.createdTime) || new Date()
@@ -27,7 +27,7 @@ export class Notepad {
 <div class="d-flex justify-content-between align-items-baseline my-2 px-2 bg-secondary">
     <span>${this.noteName}</span>
     <div>
-        <span>${this.ShortDate}</span>
+        <span>${this.EditedShortDate}</span>
         <span>
             <button onclick="app.NotepadController.openNotepad('${this.id}')" style="color: ${this.noteColor}"
                 class="btn" title="open Notepad"><i class="mdi mdi-notebook-edit"></i></button>
@@ -41,8 +41,12 @@ export class Notepad {
         return `
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <h1 class="fw-bold rounded text-center m-2 mt-3" style="background-color: ${this.noteColor};">${this.noteName}</h1>
-        <p>${this.LongDate}</p>
+        <h1 class="fw-bold rounded text-center mx-2 mt-3" style="background-color: ${this.noteColor};">${this.noteName}
+        </h1>
+        <div class="d-flex justify-content-between mb-4">
+            <span>Created On: ${this.LongDate}</span>
+            <span>Last Save: ${this.EditedLongDate}</span>
+        </div>
         <div class="col-12 col-md-9 d-flex justify-content-between mb-3">
             <button onclick="app.NotepadController.saveActiveNotepad()" class="btn btn-success"
                 title="Yeah, good idea to save that!"><i class="mdi mdi-content-save">Save!</i></button>
@@ -81,10 +85,34 @@ export class Notepad {
             minute: 'numeric',
             second: 'numeric',
         })
+
     }
 
-    get noteCounted() {
-        return
+    get EditedShortDate() {
+        return this.editedTime.toLocaleDateString()
     }
+
+    get EditedLongDate() {
+        return this.editedTime.toLocaleDateString('en-US', {
+            month: 'long',
+            weekday: 'long',
+            day: 'numeric',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+        })
+    }
+
+
+
+
+
+
 
 }
+
+// get noteCounted() {
+//     return
+// }
+

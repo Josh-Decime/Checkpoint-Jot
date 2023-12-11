@@ -59,14 +59,17 @@
     <div class="row justify-content-center">
         <h1 class="fw-bold rounded text-center m-2 mt-3" style="background-color: ${this.noteColor};">${this.noteName}
         </h1>
-        <p>${this.ShortDate}</p>
+        <div class="justify-content-around">
+            <span>Created On: ${this.LongDate}</span>
+            <span>Last Save: ${this.EditedLongDate}</span>
+        </div>
         <div class="col-12 col-md-9 d-flex justify-content-between mb-3">
             <button onclick="app.NotepadController.saveActiveNotepad()" class="btn btn-success"
                 title="Yeah, good idea to save that!"><i class="mdi mdi-content-save">Save!</i></button>
             <button onclick="app.NotepadController.removeNotepad('${this.id}')" class="btn btn-danger"
                 title="Delete your note forever & ever.."><i class="mdi mdi-skull-scan"></i></button>
         </div>
-        <div class="col-12 col-md-9 d-flex justify-content-center">
+        <div class="col-12 col-md-9 d-flex justify-content-center mb-5">
             <textarea name="activeNotepad" id="active-notepad-body" style="width: 100%;" cols="30" rows="25"
                 maxlength="50000">${this.noteBody}</textarea>
         </div>
