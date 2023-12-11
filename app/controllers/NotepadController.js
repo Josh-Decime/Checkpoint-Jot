@@ -20,10 +20,7 @@ function _drawActiveNotepad() {
     document.getElementById('active-notepad').innerHTML = content
 }
 
-function _drawLoopFunction() {
-    const notepadCount = AppState.loopFunction()
-    document.getElementById('note-count').innerHTML = notepadCount.toString()
-}
+
 
 function _drawListAndLoop() {
     _drawNotepadList()
@@ -49,7 +46,8 @@ export class NotepadController {
         // AppState.on('note-count', _drawLoopFunction)
         // _drawNotepadList() //replaced by loaded in data
         notepadService.loadNotepad()
-        _drawLoopFunction()
+        // _drawLoopFunction()
+        this.drawLoopFunction()
     }
 
     createNotepad() {
@@ -84,6 +82,12 @@ export class NotepadController {
             console.log('🔥Deleting note', noteId)
             notepadService.removeNote(noteId)
         }
+    }
+
+
+    drawLoopFunction() {
+        const notepadCount = AppState.loopFunction()
+        document.getElementById('note-count').innerHTML = notepadCount.toString()
     }
 
 }

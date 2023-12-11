@@ -35,6 +35,7 @@ class NotepadService {
         console.log('Active notepad:', activeNotepad)
         this.saveNotepad()
         // AppState.emit('note-count')
+
     }
 
     removeNote(noteId) {
